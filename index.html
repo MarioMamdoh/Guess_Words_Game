@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="css/Main.css" />
+  </head>
+  <body>
+    <div class="guess-container">
+      <header>
+        <h1 class="game-name"></h1>
+      </header>
+      <div class="guess-game-container">
+        <div class="row-1">
+          <div class="inputs"></div>
+          <div class="buttons">
+            <div class="check">Check Word</div>
+            <div class="hint"><span></span> Hint</div>
+          </div>
+        </div>
+        <div class="row-2">
+          <h3>Key Colors</h3>
+          <div class="system-info">
+            <div>
+              <span class="in-place"></span>
+              <p>Letter Is Right And In Place</p>
+            </div>
+            <div>
+              <span class="not-in-place"></span>
+              <p>Letter Is Right But Not In Place</p>
+            </div>
+            <div>
+              <span class="no-exists"></span>
+              <p>Letter Is Wrong And Not Exists In Word</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="msg"></div>
+    </div>
+    <div class="restart">Start New Game</div>
+    <script src="js/Main.js"></script>
+  </body>
+</html>

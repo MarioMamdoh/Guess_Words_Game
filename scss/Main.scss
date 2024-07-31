@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.guess-container {
+  width: 1000px;
+  margin: auto;
+  background-color: #eee;
+  header {
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    h1 {
+      font-weight: lighter;
+    }
+  }
+  .guess-game-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    .row-1 {
+      flex: 1;
+      .inputs {
+        .col {
+          display: flex;
+          align-items: center;
+          .try {
+            margin-right: 10px;
+            font-weight: bold;
+            width: 38px;
+            &.disabled {
+              opacity: 0.2;
+            }
+          }
+          input {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            font-size: 58px;
+            border: none;
+            border-bottom: 3px solid #222;
+            &:disabled {
+              opacity: 0.2;
+            }
+            &:focus {
+              outline: none;
+              caret-color: aqua;
+            }
+            &.in-place {
+              background-color: #50ff50;
+              opacity: 0.2;
+              border: none;
+              color: white;
+            }
+            &.not-in-place {
+              background-color: orange;
+              opacity: 0.4;
+              border: none;
+              color: white;
+            }
+            &.no-exists {
+              background-color: black;
+              opacity: 0.2;
+              border: none;
+              color: white;
+            }
+          }
+        }
+      }
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .check {
+          width: 60%;
+          text-align: center;
+          padding: 10px;
+          border-radius: 15px;
+          color: white;
+          font-size: 35px;
+          font-weight: bold;
+          background-color: #f44336;
+          margin-right: 20px;
+          cursor: pointer;
+          user-select: none;
+          &.disabled {
+            pointer-events: none;
+            cursor: not-allowed;
+            opacity: 0.2;
+          }
+        }
+        .hint {
+          text-align: center;
+          background-color: #41e341;
+          padding: 20px;
+          width: fit-content;
+          color: white;
+          font-weight: bold;
+          border-radius: 10px;
+          cursor: pointer;
+          user-select: none;
+          &.disabled {
+            pointer-events: none;
+            cursor: not-allowed;
+            opacity: 0.2;
+          }
+        }
+      }
+    }
+    .row-2 {
+      align-self: self-start;
+      margin-top: 50px;
+      h3 {
+        text-align: center;
+      }
+      .system-info {
+        > div {
+          background-color: white;
+          margin: 10px;
+          padding: 5px;
+          display: flex;
+          align-items: center;
+          span {
+            width: 30px;
+            height: 30px;
+            &.in-place {
+              background-color: #50ff50;
+            }
+            &.not-in-place {
+              background-color: orange;
+            }
+            &.no-exists {
+              background-color: black;
+            }
+          }
+          p {
+            margin-left: 10px;
+            font-size: large;
+          }
+        }
+      }
+    }
+  }
+  .msg {
+    width: 800px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #41e341;
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+    display: none;
+    &.show {
+      display: block;
+    }
+    &.lose {
+      display: block;
+      background-color: #f44336;
+    }
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+      font-weight: bold;
+    }
+    p {
+      margin-top: 10px;
+      color: #222;
+      font-size: 40px;
+    }
+  }
+}
+.restart {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: aqua;
+  padding: 30px 20px;
+  font-size: 25px;
+  border-radius: 20px;
+  margin: 20px auto;
+  margin-top: 50px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  width: fit-content;
+  color: white;
+  display: none;
+  &.show {
+    display: block;
+  }
+}

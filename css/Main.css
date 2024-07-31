@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.guess-container {
+  width: 1000px;
+  margin: auto;
+  background-color: #eee;
+}
+.guess-container header {
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+}
+.guess-container header h1 {
+  font-weight: lighter;
+}
+.guess-container .guess-game-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+.guess-container .guess-game-container .row-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.guess-container .guess-game-container .row-1 .inputs .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.guess-container .guess-game-container .row-1 .inputs .col .try {
+  margin-right: 10px;
+  font-weight: bold;
+  width: 38px;
+}
+.guess-container .guess-game-container .row-1 .inputs .col .try.disabled {
+  opacity: 0.2;
+}
+.guess-container .guess-game-container .row-1 .inputs .col input {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  margin: 10px;
+  text-align: center;
+  font-size: 58px;
+  border: none;
+  border-bottom: 3px solid #222;
+}
+.guess-container .guess-game-container .row-1 .inputs .col input:disabled {
+  opacity: 0.2;
+}
+.guess-container .guess-game-container .row-1 .inputs .col input:focus {
+  outline: none;
+  caret-color: aqua;
+}
+.guess-container .guess-game-container .row-1 .inputs .col input.in-place {
+  background-color: #50ff50;
+  opacity: 0.2;
+  border: none;
+  color: white;
+}
+.guess-container .guess-game-container .row-1 .inputs .col input.not-in-place {
+  background-color: orange;
+  opacity: 0.4;
+  border: none;
+  color: white;
+}
+.guess-container .guess-game-container .row-1 .inputs .col input.no-exists {
+  background-color: black;
+  opacity: 0.2;
+  border: none;
+  color: white;
+}
+.guess-container .guess-game-container .row-1 .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.guess-container .guess-game-container .row-1 .buttons .check {
+  width: 60%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  background-color: #f44336;
+  margin-right: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.guess-container .guess-game-container .row-1 .buttons .check.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+.guess-container .guess-game-container .row-1 .buttons .hint {
+  text-align: center;
+  background-color: #41e341;
+  padding: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.guess-container .guess-game-container .row-1 .buttons .hint.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+.guess-container .guess-game-container .row-2 {
+  -ms-flex-item-align: self-start;
+      -ms-grid-row-align: self-start;
+      align-self: self-start;
+  margin-top: 50px;
+}
+.guess-container .guess-game-container .row-2 h3 {
+  text-align: center;
+}
+.guess-container .guess-game-container .row-2 .system-info > div {
+  background-color: white;
+  margin: 10px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.guess-container .guess-game-container .row-2 .system-info > div span {
+  width: 30px;
+  height: 30px;
+}
+.guess-container .guess-game-container .row-2 .system-info > div span.in-place {
+  background-color: #50ff50;
+}
+.guess-container .guess-game-container .row-2 .system-info > div span.not-in-place {
+  background-color: orange;
+}
+.guess-container .guess-game-container .row-2 .system-info > div span.no-exists {
+  background-color: black;
+}
+.guess-container .guess-game-container .row-2 .system-info > div p {
+  margin-left: 10px;
+  font-size: large;
+}
+.guess-container .msg {
+  width: 800px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #41e341;
+  color: white;
+  padding: 50px;
+  border-radius: 10px;
+  display: none;
+}
+.guess-container .msg.show {
+  display: block;
+}
+.guess-container .msg.lose {
+  display: block;
+  background-color: #f44336;
+}
+.guess-container .msg span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 60px;
+  font-weight: bold;
+}
+.guess-container .msg p {
+  margin-top: 10px;
+  color: #222;
+  font-size: 40px;
+}
+
+.restart {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: aqua;
+  padding: 30px 20px;
+  font-size: 25px;
+  border-radius: 20px;
+  margin: 20px auto;
+  margin-top: 50px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  display: none;
+}
+.restart.show {
+  display: block;
+}
